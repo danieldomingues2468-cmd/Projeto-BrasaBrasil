@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="0"
+      style="-fx-background-color: #0B0B0D;"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.senai.javafx.brasabrasil.HistoricoController">
+
+    <!-- CABEÇALHO -->
+    <fx:include source="Cabecalho.fxml"/>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <VBox spacing="25"
+          VBox.vgrow="ALWAYS">
+
+        <padding>
+            <Insets top="38" right="55" bottom="35" left="55"/>
+        </padding>
+
+        <!-- TÍTULO E BOTÃO ATUALIZAR -->
+        <HBox alignment="CENTER_LEFT" spacing="15">
+
+            <VBox spacing="8">
+                <Label text="PAINEL DE CLIENTES"
+                       style="-fx-text-fill: #FFD02F;
+                              -fx-font-size: 12px;
+                              -fx-font-weight: bold;"/>
+
+                <Label text="Histórico de cadastros"
+                       style="-fx-text-fill: white;
+                              -fx-font-size: 31px;
+                              -fx-font-weight: bold;"/>
+
+                <Label text="Consulte e acompanhe os clientes do Brasa Brasil."
+                       style="-fx-text-fill: #A0A0A8;
+                              -fx-font-size: 14px;"/>
+            </VBox>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button text="↻  ATUALIZAR"
+                    onAction="#atualizarTabela"
+                    style="-fx-background-color: #FFD02F;
+                           -fx-text-fill: #111111;
+                           -fx-font-size: 12px;
+                           -fx-font-weight: bold;
+                           -fx-padding: 14 20 14 20;
+                           -fx-background-radius: 7;
+                           -fx-cursor: hand;"/>
+        </HBox>
+
+        <!-- CARTÕES DE RESUMO -->
+        <HBox spacing="18" prefHeight="125">
+
+            <VBox spacing="12"
+                  alignment="CENTER_LEFT"
+                  HBox.hgrow="ALWAYS"
+                  style="-fx-background-color: #171719;
+                         -fx-background-radius: 12;
+                         -fx-border-color: #303034;
+                         -fx-border-radius: 12;
+                         -fx-padding: 20;">
+
+                <Label text="TOTAL DE CLIENTES"
+                       style="-fx-text-fill: #A0A0A8;
+                              -fx-font-size: 11px;
+                              -fx-font-weight: bold;"/>
+
+                <Label fx:id="totalClientes"
+                       text="0"
+                       style="-fx-text-fill: #FFD02F;
+                              -fx-font-size: 30px;
+                              -fx-font-weight: bold;"/>
+
+                <Label text="Cadastros registrados"
+                       style="-fx-text-fill: #85858D;
+                              -fx-font-size: 12px;"/>
+            </VBox>
+
+            <VBox spacing="12"
+                  alignment="CENTER_LEFT"
+                  HBox.hgrow="ALWAYS"
+                  style="-fx-background-color: #171719;
+                         -fx-background-radius: 12;
+                         -fx-border-color: #303034;
+                         -fx-border-radius: 12;
+                         -fx-padding: 20;">
+
+                <Label text="SISTEMA"
+                       style="-fx-text-fill: #A0A0A8;
+                              -fx-font-size: 11px;
+                              -fx-font-weight: bold;"/>
+
+                <Label text="BRASA BRASIL"
+                       style="-fx-text-fill: white;
+                              -fx-font-size: 23px;
+                              -fx-font-weight: bold;"/>
+
+                <Label text="Gestão de clientes cadastrados"
+                       style="-fx-text-fill: #85858D;
+                              -fx-font-size: 12px;"/>
+            </VBox>
+
+        </HBox>
+
+        <!-- PAINEL DA TABELA -->
+        <VBox spacing="18"
+              VBox.vgrow="ALWAYS"
+              style="-fx-background-color: #151517;
+                     -fx-background-radius: 12;
+                     -fx-border-color: #303034;
+                     -fx-border-radius: 12;">
+
+            <padding>
+                <Insets top="25" right="25" bottom="22" left="25"/>
+            </padding>
+
+            <!-- TÍTULO E PESQUISA -->
+            <HBox alignment="CENTER_LEFT" spacing="15">
+
+                <VBox spacing="6">
+                    <Label text="Clientes cadastrados"
+                           style="-fx-text-fill: white;
+                                  -fx-font-size: 19px;
+                                  -fx-font-weight: bold;"/>
+
+                    <Label text="Lista de nomes e e-mails registrados"
+                           style="-fx-text-fill: #929299;
+                                  -fx-font-size: 12px;"/>
+                </VBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <TextField fx:id="campoPesquisa"
+                           promptText="Pesquisar cliente..."
+                           prefWidth="300"
+                           prefHeight="42"
+                           style="-fx-background-color: #222225;
+                                  -fx-text-fill: white;
+                                  -fx-prompt-text-fill: #85858D;
+                                  -fx-border-color: #39393F;
+                                  -fx-border-radius: 7;
+                                  -fx-background-radius: 7;
+                                  -fx-padding: 0 12 0 12;"/>
+            </HBox>
+
+
+            <TableView fx:id="tabelaUsuarios"
+                       VBox.vgrow="ALWAYS"
+                       style="-fx-background-color: #151517;
+                  -fx-control-inner-background: #151517;
+                  -fx-control-inner-background-alt: #1C1C1F;
+                  -fx-table-cell-border-color: #303034;
+                  -fx-border-color: #303034;
+                  -fx-border-radius: 7;
+                  -fx-background-radius: 7;">
+
+                <columns>
+                    <TableColumn fx:id="colunaNome"
+                                 text="NOME DO CLIENTE"
+                                 prefWidth="450"/>
+
+                    <TableColumn fx:id="colunaGmail"
+                                 text="E-MAIL"
+                                 prefWidth="450"/>
+                </columns>
+
+                <TableColumn fx:id="colunaCompras"
+                             text="COMPRAS"
+                             prefWidth="120"/>
+
+                <TableColumn fx:id="colunaTotalGasto"
+                             text="TOTAL GASTO"
+                             prefWidth="160"/>
+
+            </TableView>
+
+
+            <!-- RODAPÉ -->
+            <HBox alignment="CENTER_LEFT">
+
+                <Label text="BRASA BRASIL  /  GESTÃO DE CLIENTES"
+                       style="-fx-text-fill: #777780;
+                              -fx-font-size: 10px;
+                              -fx-font-weight: bold;"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Label text="PAINEL ADMINISTRATIVO"
+                       style="-fx-text-fill: #777780;
+                              -fx-font-size: 10px;"/>
+            </HBox>
+
+        </VBox>
+
+    </VBox>
+
+</VBox>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox alignment="CENTER_LEFT"
+      spacing="60.0"
+      prefHeight="90.0"
+      stylesheets="@style.css"
+      style="-fx-background-color: #111111;
+             -fx-padding: 0 35 0 35;"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.senai.javafx.brasabrasil.CabecalhoController">
+
+    <!-- LOGO -->
+    <Label text="Brasa Brasil"
+           style="-fx-text-fill: #FFD83D;
+                  -fx-font-family: 'Arial';
+                  -fx-font-size: 25px;
+                  -fx-font-weight: bold;" />
+
+    <!-- MENU -->
+    <Button text="Menu"
+            onAction="#abrirMenu"
+            styleClass="menu-item" />
+
+    <!-- CADASTRO -->
+    <Button text="Cadastro"
+            onAction="#abrirCadastro"
+            styleClass="menu-item" />
+
+    <!-- CARDAPIO -->
+    <Button text="Cardapio"
+            onAction="#abrirCardapio"
+            styleClass="menu-item" />
+
+    <!-- HISTORICO -->
+    <Button text="Historico"
+            onAction="#abrirHistorico"
+            styleClass="menu-item" />
+
+
+
+
+
+
+</HBox>

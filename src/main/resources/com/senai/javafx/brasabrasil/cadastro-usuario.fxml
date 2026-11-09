@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefWidth="1920.0"
+            prefHeight="1080.0"
+            style="-fx-background-color: #080808;"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.senai.javafx.brasabrasil.CadastroController">
+    <!-- FUNDO -->
+    <ImageView fitWidth="1920.0"
+               fitHeight="1080.0"
+               preserveRatio="false"
+               mouseTransparent="true"
+               AnchorPane.topAnchor="0.0"
+               AnchorPane.bottomAnchor="0.0"
+               AnchorPane.leftAnchor="0.0"
+               AnchorPane.rightAnchor="0.0">
+        <image>
+            <Image url="@imagens/a01683b4-2737-47d4-bc9c-8cb4d7b2472b.png"/>
+        </image>
+    </ImageView>
+
+    <!-- CAMADA ESCURA PARA DAR CONTRASTE -->
+    <Pane mouseTransparent="true"
+          style="-fx-background-color: rgba(0,0,0,0.48);"
+          AnchorPane.topAnchor="0.0"
+          AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0"/>
+
+    <!-- DESTAQUE DA MARCA -->
+    <VBox spacing="20.0"
+          alignment="CENTER_LEFT"
+          prefWidth="700.0"
+          AnchorPane.leftAnchor="90.0"
+          AnchorPane.topAnchor="250.0">
+
+        <Label text="BRASA BRASIL"
+               style="-fx-text-fill: #FFD02F;
+                      -fx-font-family: 'Arial Black';
+                      -fx-font-size: 25px;"/>
+
+        <Label text="SABOR QUE"
+               style="-fx-text-fill: white;
+                      -fx-font-size: 25px;
+                      -fx-font-weight: bold;"/>
+
+        <Label text="CONECTA."
+               wrapText="true"
+               style="-fx-text-fill: #FFD02F;
+                      -fx-font-family: 'Arial Black';
+                      -fx-font-size: 76px;"/>
+
+        <Region prefHeight="8.0"/>
+
+        <Label text="Seu próximo sabor favorito começa aqui."
+               wrapText="true"
+               maxWidth="560.0"
+               style="-fx-text-fill: #F0F0F0;
+                      -fx-font-size: 25px;"/>
+
+        <Label text="Crie sua conta e faça parte da experiência Brasa Brasil."
+               wrapText="true"
+               maxWidth="540.0"
+               style="-fx-text-fill: #C5C5C5;
+                      -fx-font-size: 18px;"/>
+    </VBox>
+
+    <!-- CARTÃO DE CADASTRO -->
+    <VBox alignment="CENTER"
+          spacing="19.0"
+          prefWidth="600.0"
+          prefHeight="790.0"
+          style="-fx-background-color: rgba(9,10,12,0.97);
+                 -fx-border-color: #A9A9A9;
+                 -fx-border-width: 1.5;
+                 -fx-border-radius: 24;
+                 -fx-background-radius: 24;
+                 -fx-padding: 38 48 32 48;"
+          AnchorPane.rightAnchor="100.0"
+          AnchorPane.topAnchor="155.0">
+
+        <Label text="CRIE SUA CONTA"
+               style="-fx-text-fill: white;
+                      -fx-font-family: 'Arial Black';
+                      -fx-font-size: 34px;"/>
+
+        <Label text="Entre para a família Brasa Brasil"
+               style="-fx-text-fill: #B8B8B8;
+                      -fx-font-size: 16px;"/>
+
+        <Region prefHeight="5.0"/>
+
+        <!-- NOME -->
+        <VBox spacing="8.0" alignment="CENTER_LEFT">
+            <Label text="NOME COMPLETO"
+                   style="-fx-text-fill: #FFD02F;
+                          -fx-font-size: 13px;
+                          -fx-font-weight: bold;"/>
+
+            <TextField fx:id="campoNome"
+                       promptText="Como podemos chamar você?"
+                       prefHeight="55.0"
+                       prefWidth="500.0"
+                       style="-fx-background-color: #151619;
+                              -fx-text-fill: white;
+                              -fx-prompt-text-fill: #85858B;
+                              -fx-font-size: 16px;
+                              -fx-background-radius: 10;
+                              -fx-border-color: #393A40;
+                              -fx-border-radius: 10;
+                              -fx-padding: 0 16 0 16;"/>
+        </VBox>
+
+        <!-- GMAIL -->
+        <VBox spacing="8.0" alignment="CENTER_LEFT">
+            <Label text="E-MAIL"
+                   style="-fx-text-fill: #FFD02F;
+                          -fx-font-size: 13px;
+                          -fx-font-weight: bold;"/>
+
+            <TextField fx:id="campoGmail"
+                       promptText="Digite seu e-mail"
+                       prefHeight="55.0"
+                       prefWidth="500.0"
+                       style="-fx-background-color: #151619;
+                              -fx-text-fill: white;
+                              -fx-prompt-text-fill: #85858B;
+                              -fx-font-size: 16px;
+                              -fx-background-radius: 10;
+                              -fx-border-color: #393A40;
+                              -fx-border-radius: 10;
+                              -fx-padding: 0 16 0 16;"/>
+        </VBox>
+
+        <!-- SENHA -->
+        <VBox spacing="8.0" alignment="CENTER_LEFT">
+            <Label text="SENHA"
+                   style="-fx-text-fill: #FFD02F;
+                          -fx-font-size: 13px;
+                          -fx-font-weight: bold;"/>
+
+            <PasswordField fx:id="campoSenha"
+                           promptText="Crie uma senha"
+                           prefHeight="55.0"
+                           prefWidth="500.0"
+                           style="-fx-background-color: #151619;
+                                  -fx-text-fill: white;
+                                  -fx-prompt-text-fill: #85858B;
+                                  -fx-font-size: 16px;
+                                  -fx-background-radius: 10;
+                                  -fx-border-color: #393A40;
+                                  -fx-border-radius: 10;
+                                  -fx-padding: 0 16 0 16;"/>
+        </VBox>
+
+        <!-- CONFIRMAR SENHA -->
+        <VBox spacing="8.0" alignment="CENTER_LEFT">
+            <Label text="CONFIRMAR SENHA"
+                   style="-fx-text-fill: #FFD02F;
+                          -fx-font-size: 13px;
+                          -fx-font-weight: bold;"/>
+
+            <PasswordField fx:id="campoConfirmarSenha"
+                           promptText="Digite a senha novamente"
+                           prefHeight="55.0"
+                           prefWidth="500.0"
+                           style="-fx-background-color: #151619;
+                                  -fx-text-fill: white;
+                                  -fx-prompt-text-fill: #85858B;
+                                  -fx-font-size: 16px;
+                                  -fx-background-radius: 10;
+                                  -fx-border-color: #393A40;
+                                  -fx-border-radius: 10;
+                                  -fx-padding: 0 16 0 16;"/>
+        </VBox>
+
+        <!-- MENSAGEM ÚNICA -->
+        <Label fx:id="mensagem"
+               text=""
+               wrapText="true"
+               alignment="CENTER"
+               maxWidth="500.0"
+               minHeight="25.0"
+               style="-fx-text-fill: #FFD02F;
+                      -fx-font-size: 14px;"/>
+
+        <!-- CADASTRAR -->
+        <Button text="CRIAR MINHA CONTA     →"
+                onAction="#cadastrar"
+                maxWidth="Infinity"
+                prefHeight="58.0"
+                style="-fx-background-color: #FFD02F;
+                       -fx-text-fill: #101010;
+                       -fx-font-size: 17px;
+                       -fx-font-weight: bold;
+                       -fx-background-radius: 12;
+                       -fx-cursor: hand;"/>
+
+
+        <Label text="Já tem uma conta?"
+               style="-fx-text-fill: #B8B8B8;
+              -fx-font-size: 14px;"/>
+
+        <Button
+                text="ENTRAR NA MINHA CONTA  →"
+                onAction="#abrirEntrar"
+                maxWidth="Infinity"
+                prefHeight="50.0"/>
+
+
+        <Label text="BRASA BRASIL  •  FEITO PARA QUEM AMA SABOR"
+               wrapText="true"
+               style="-fx-text-fill: #77777D;
+                      -fx-font-size: 10px;"/>
+
+    </VBox>
+
+    <!-- CABEÇALHO ORIGINAL: PRESERVA A NAVEGAÇÃO EXISTENTE -->
+    <fx:include source="Cabecalho.fxml"
+                AnchorPane.topAnchor="0.0"
+                AnchorPane.leftAnchor="0.0"
+                AnchorPane.rightAnchor="0.0"/>
+
+</AnchorPane>
